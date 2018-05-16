@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CognitiveServices.Wrapper\CognitiveServices.Wrapper.csproj" />
+    <ProjectReference Include="..\CognitiveServices.Translator.Wrapper\CognitiveServices.Translator.Wrapper.csproj" />
   </ItemGroup>
 
 </Project>

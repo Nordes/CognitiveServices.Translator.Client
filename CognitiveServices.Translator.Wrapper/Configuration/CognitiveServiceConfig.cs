@@ -1,4 +1,4 @@
-﻿namespace CognitiveServices.Wrapper.Configuration
+﻿namespace CognitiveServices.Translator.Configuration
 {
     public class CognitiveServiceConfig
     {

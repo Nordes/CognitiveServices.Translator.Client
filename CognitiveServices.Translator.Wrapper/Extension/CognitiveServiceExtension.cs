@@ -1,8 +1,8 @@
-﻿using CognitiveServices.Wrapper.Configuration;
+﻿using CognitiveServices.Translator.Configuration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace CognitiveServices.Wrapper.Extension
+namespace CognitiveServices.Translator.Extension
 {
     public static class CognitiveServiceExtension
     {

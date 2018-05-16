@@ -1,8 +1,8 @@
-﻿using CognitiveServices.Wrapper.Translate;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CognitiveServices.Translator.Translate;
 using Xunit;
 
-namespace CognitiveServices.Wrapper.UnitTests
+namespace CognitiveServices.Translator.Wrapper.UnitTests
 {
     public class TranslateClientTests
     {

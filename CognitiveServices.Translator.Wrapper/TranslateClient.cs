@@ -1,15 +1,15 @@
-﻿using CognitiveServices.Wrapper.Translate;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using CognitiveServices.Wrapper.Configuration;
+using CognitiveServices.Translator.Configuration;
+using CognitiveServices.Translator.Translate;
+using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 
-namespace CognitiveServices.Wrapper
+namespace CognitiveServices.Translator
 {
     /// <summary>
     /// Translate using cognitive service from Microsoft

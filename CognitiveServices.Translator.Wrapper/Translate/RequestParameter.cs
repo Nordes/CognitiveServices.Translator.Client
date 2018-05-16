@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace CognitiveServices.Wrapper.Translate
+namespace CognitiveServices.Translator.Translate
 {
     public class RequestParameter
     {

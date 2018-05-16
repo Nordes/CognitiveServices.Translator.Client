@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CognitiveServices.Wrapper.Translate
+namespace CognitiveServices.Translator.Translate
 {
     public class RequestContent
     {

@@ -1,8 +1,8 @@
-﻿using CognitiveServices.Wrapper.Translate;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using CognitiveServices.Translator.Translate;
 
-namespace CognitiveServices.Wrapper
+namespace CognitiveServices.Translator
 {
     public interface ITranslateClient
     {

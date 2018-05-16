@@ -1,4 +1,4 @@
-﻿namespace CognitiveServices.Wrapper.Translate
+﻿namespace CognitiveServices.Translator.Translate
 {
     public class Transliteration
     {

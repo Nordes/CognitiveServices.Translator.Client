@@ -1,4 +1,4 @@
-﻿namespace CognitiveServices.Wrapper.Translate
+﻿namespace CognitiveServices.Translator.Translate
 {
     /// <summary>
     /// An object describing the detected language 

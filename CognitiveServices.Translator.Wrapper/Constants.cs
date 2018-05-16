@@ -1,4 +1,4 @@
-﻿namespace CognitiveServices.Wrapper
+﻿namespace CognitiveServices.Translator
 {
     internal static class Constants
     {
