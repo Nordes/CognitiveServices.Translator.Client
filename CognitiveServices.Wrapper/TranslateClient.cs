@@ -1,4 +1,4 @@
-﻿using CognitiveServices.Wrapper.Translator;
+﻿using CognitiveServices.Wrapper.Translate;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
@@ -14,24 +14,24 @@ namespace CognitiveServices.Wrapper
     /// <summary>
     /// Translate using cognitive service from Microsoft
     /// </summary>
-    /// <seealso cref="ITranslatorClient" />
+    /// <seealso cref="ITranslateClient" />
     /// <remarks>https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstarts/csharp</remarks>
-    public class TranslatorClient : ITranslatorClient
+    public class TranslateClient : ITranslateClient
     {
         private const int MaxNumberOfRequestContent = 25;
         private const int MaxNumberOfCharacterPerRequest = 5_000;
         private const string UriExtensionPath = "translate";
 
-        private readonly ILogger<TranslatorClient> _logger;
+        private readonly ILogger<TranslateClient> _logger;
         private readonly CognitiveServiceConfig _cognitiveServiceConfig = new CognitiveServiceConfig();
         private readonly HttpClient _httpClient;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TranslatorClient" /> class.
+        /// Initializes a new instance of the <see cref="TranslateClient" /> class.
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="cognitiveServiceConfig">The cognitive service configuration.</param>
-        public TranslatorClient(ILogger<TranslatorClient> logger, CognitiveServiceConfig cognitiveServiceConfig)
+        public TranslateClient(ILogger<TranslateClient> logger, CognitiveServiceConfig cognitiveServiceConfig)
         {
             _logger = logger;
             _cognitiveServiceConfig = cognitiveServiceConfig;

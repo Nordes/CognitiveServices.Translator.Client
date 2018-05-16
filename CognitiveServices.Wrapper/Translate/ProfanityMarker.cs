@@ -1,4 +1,4 @@
-﻿namespace CognitiveServices.Wrapper.Translator
+﻿namespace CognitiveServices.Wrapper.Translate
 {
     public enum ProfanityMarker
     {

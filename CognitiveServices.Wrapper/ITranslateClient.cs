@@ -1,10 +1,10 @@
-﻿using CognitiveServices.Wrapper.Translator;
+﻿using CognitiveServices.Wrapper.Translate;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CognitiveServices.Wrapper
 {
-    public interface ITranslatorClient
+    public interface ITranslateClient
     {
         Task<IList<ResponseBody>> TranslateAsync(IEnumerable<RequestContent> content, RequestParameter options);
         Task<IList<ResponseBody>> TranslateAsync(RequestContent content, RequestParameter options);

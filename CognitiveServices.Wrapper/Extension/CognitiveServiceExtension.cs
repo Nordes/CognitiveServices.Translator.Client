@@ -15,7 +15,7 @@ namespace CognitiveServices.Wrapper.Extension
                     $"section. Please read the doc.");
 
             services.AddSingleton(cognitiveServiceConfig);
-            services.AddScoped<ITranslatorClient, TranslatorClient>(); // Maybe should be a singleton instead?
+            services.AddScoped<ITranslateClient, TranslateClient>(); // Maybe should be a singleton instead?
 
             return services;
         }

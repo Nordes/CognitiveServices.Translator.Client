@@ -42,16 +42,16 @@ services.AddScoped<ITranslate, SampleClassWithInjection>(); // Where ITranslate 
 ### SampleClassWithInjection.cs
 ```csharp
 public class SampleClassWithInjection: ITranslate {
-  private readonly ITranslatorClient _translatorClient;
+  private readonly ITranslateClient _translateClient;
   private readonly ILogger<SampleClassWithInjection> _logger;
 
-  public SampleClassWithInjection(ITranslatorClient translatorClient, ILogger<SampleClassWithInjection> logger) {
-    _translatorClient = translatorClient;
+  public SampleClassWithInjection(ITranslateClient translateClient, ILogger<SampleClassWithInjection> logger) {
+    _translateClient = translateClient;
     _logger = logger;
   }
 
   public IList<ResponseBody> TranslateSomething(string text) {
-    var response = _translatorClient.Translate(
+    var response = _translateClient.Translate(
       new RequestContent(text),
       new RequestParameter
       {

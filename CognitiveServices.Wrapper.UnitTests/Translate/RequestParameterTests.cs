@@ -1,8 +1,8 @@
-﻿using CognitiveServices.Wrapper.Translator;
+﻿using CognitiveServices.Wrapper.Translate;
 using System;
 using Xunit;
 
-namespace CognitiveServices.Wrapper.UnitTests.Translator
+namespace CognitiveServices.Wrapper.UnitTests.Translate
 {
     public class RequestParameterTests
     {

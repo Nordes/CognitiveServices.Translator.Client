@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CognitiveServices.Wrapper.Translator
+namespace CognitiveServices.Wrapper.Translate
 {
     public class ResponseBody
     {

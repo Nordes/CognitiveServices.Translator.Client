@@ -10,6 +10,10 @@
     <PackageTags>Cognitive-services, CognitiveServices, Azure, Translator, microsoft-translator-service, Translate, Translation</PackageTags>
     <NeutralLanguage></NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
+    <PackageProjectUrl>https://github.com/Nordes/CognitiveServices.Wrapper</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nordes/CognitiveServices.Wrapper</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
