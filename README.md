@@ -17,7 +17,7 @@ Microsoft Cognitive Services wrapper. This code/package tries to cover the versi
 ## How to install
 Simply install using the Nuget package manager on your project and search for the `CognitiveServices.Wrapper` package.
 
-Or, you may simply use the command line and do `nuget install CognitiveServices.Wrapper`.
+Or, you may simply use the command line and do `Install-Package CognitiveServices.Wrapper -Version 1.0.0`.
 
 ## How to use
 A few choices exists, I will be presenting the most common scenario with the DI (Dependency Injection).
