@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitiveServices.Wrapper", "CognitiveServices.Wrapper\CognitiveServices.Wrapper.csproj", "{CF131F31-9576-4E8C-ABEC-3F245456B52F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitiveServices.Wrapper.UnitTests", "CognitiveServices.Wrapper.UnitTests\CognitiveServices.Wrapper.UnitTests.csproj", "{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{62F4FC47-337A-4C34-9971-F77E659EC721}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF131F31-9576-4E8C-ABEC-3F245456B52F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF131F31-9576-4E8C-ABEC-3F245456B52F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF131F31-9576-4E8C-ABEC-3F245456B52F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF131F31-9576-4E8C-ABEC-3F245456B52F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0} = {62F4FC47-337A-4C34-9971-F77E659EC721}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF7AB9F6-3F8F-4488-AB8C-08388F922E91}
+	EndGlobalSection
+EndGlobal
