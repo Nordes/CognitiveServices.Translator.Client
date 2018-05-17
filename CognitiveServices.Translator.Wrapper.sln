@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitiveServices.Translato
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{62F4FC47-337A-4C34-9971-F77E659EC721}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitiveServices.Translator.Wrapper.WebSample", "CognitiveServices.Translator.Wrapper.WebSample\CognitiveServices.Translator.Wrapper.WebSample.csproj", "{0C7301A5-0CA3-464D-9154-541FF07B679C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

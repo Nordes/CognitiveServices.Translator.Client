@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using CognitiveServices.Translator.Configuration;
 using CognitiveServices.Translator.Translate;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace CognitiveServices.Translator
@@ -22,7 +21,6 @@ namespace CognitiveServices.Translator
         private const int MaxNumberOfCharacterPerRequest = 5_000;
         private const string UriExtensionPath = "translate";
 
-        private readonly ILogger<TranslateClient> _logger;
         private readonly CognitiveServiceConfig _cognitiveServiceConfig = new CognitiveServiceConfig();
         private readonly HttpClient _httpClient;
 
@@ -106,8 +104,7 @@ namespace CognitiveServices.Translator
                 else
                 {
                     // Problem happened.
-                    _logger.LogError($"{response.StatusCode}-{response.ReasonPhrase}");
-                    throw new Exception("Problem happened during translation.");
+                    throw new Exception($"Problem happened during translation. Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}");
                 }
             }
         }
