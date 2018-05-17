@@ -31,11 +31,9 @@ namespace CognitiveServices.Translator
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="cognitiveServiceConfig">The cognitive service configuration.</param>
-        public TranslateClient(ILogger<TranslateClient> logger, CognitiveServiceConfig cognitiveServiceConfig)
+        public TranslateClient(CognitiveServiceConfig cognitiveServiceConfig)
         {
-            _logger = logger;
             _cognitiveServiceConfig = cognitiveServiceConfig;
-            logger.LogInformation(_cognitiveServiceConfig.SubscriptionKey);
 
             // In Core 2.1, we can use what is described in: https://docs.microsoft.com/en-gb/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1
             // Otherwise, maybe use RestSharp?
