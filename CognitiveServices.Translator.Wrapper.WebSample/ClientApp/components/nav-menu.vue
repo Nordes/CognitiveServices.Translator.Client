@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
             <router-link class="navbar-brand" to="/"><icon :icon="['fab', 'microsoft']"/> CognitiveServices Translator</router-link>
-
+            <api-key/>
             <transition name="slide">
                 <div :class="'collapse navbar-collapse' + (!collapsed ? ' show':'')" v-show="!collapsed">
                     <ul class="navbar-nav mr-auto">
@@ -26,8 +26,12 @@
 
 <script>
     import { routes } from '../router/routes'
+    import ApiKeyComponent from './shared/apiKey'
 
     export default {
+      components: {
+        'api-key': ApiKeyComponent
+      },
       data () {
         return {
           routes,
