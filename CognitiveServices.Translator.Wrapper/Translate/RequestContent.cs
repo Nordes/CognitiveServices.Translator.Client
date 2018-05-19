@@ -4,6 +4,10 @@ namespace CognitiveServices.Translator.Translate
 {
     public class RequestContent
     {
+        public RequestContent()
+        {
+        }
+
         public RequestContent(string text)
         {
             Text = text;

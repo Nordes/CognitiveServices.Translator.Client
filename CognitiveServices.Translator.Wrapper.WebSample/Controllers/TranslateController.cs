@@ -1,4 +1,11 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Threading.Tasks;
+using CognitiveServices.Translator;
+using CognitiveServices.Translator.Translate;
+using CognitiveServices.Translator.Wrapper.WebSample.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Vue2Spa.Controllers
@@ -8,12 +15,18 @@ namespace Vue2Spa.Controllers
     {
         public TranslateController()
         {
-            // Whatever..
+            // In case of injection... we could then use a scoped OR a different way of using pre-configured
+            // translator configuration.
         }
 
-        [HttpGet("[action]")]
-        public object Translate() {
-            return null;
+        //[HttpPut("[action]")]
+        //public async Task<IList<ResponseBody>> Translate([Required] Translate translate)
+        [HttpPut()]
+        public async Task<IList<ResponseBody>> Index([FromBody] Translate translate)
+        {
+            var translateClient = new TranslateClient(translate.CognitiveServicesConfig);
+
+            return await translateClient.TranslateAsync(translate.RequestContents, translate.Options);
         }
     }
 }

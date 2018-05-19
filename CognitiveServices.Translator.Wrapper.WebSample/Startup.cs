@@ -1,4 +1,5 @@
 using System;
+using CognitiveServices.Translator.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.Webpack;
@@ -17,6 +18,7 @@ namespace Vue2Spa
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
+
             Configuration = builder.Build();
         }
 
@@ -28,8 +30,8 @@ namespace Vue2Spa
             // Add framework services.
             services.AddMvc();
 
-            // Simple example with dependency injection for a data provider.
-            //services.AddSingleton<Providers.IWeatherProvider, Providers.WeatherProviderFake>();
+            // Add the cognitive service (in case you want to use DI using the appsettings.json)
+            services.AddCognitivesService(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

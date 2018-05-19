@@ -1,53 +1,70 @@
 ﻿<template>
     <div>
-        <h1>Translate API Wrapper Demo</h1>
+      <h1>Translate API Wrapper Demo</h1>
 
-        <p>This demonstrates how the basics of the library.</p>
+      <p>This demonstrates how the basics of the library.</p>
 
-        <div class="text-center">
-            <p><em>Loading...</em></p>
-            <h1><icon icon="spinner" pulse/></h1>            
+      <div class="row">
+
+        <div class="col-md-4"> 
+          <div class="card border-dark h-100">
+            <div class="card-header text-white bg-dark">Options</div>
+            <div class="card-body text-dark">
+              <translate-options ref="options" />
+            </div>
+          </div>
         </div>
-    </div>
+        <div class="col-md-8">
+          <div class="card border-secondary">
+            <div class="card-header text-white bg-secondary">
+              Content
+            </div>
+            <div class="card-body text-dark">
+              <h5><span id="inputType">{{translateType}}</span> to translate</h5>
+              <textarea class="w-100"/>
+              
+              <button class="btn btn-primary float-md-right" @click="translate">Translate</button>
+              <br><br><br>
+              <h5>JSON Result:</h5> 
+              <pre class="border p-1 border-secondary">
+result will be displayed here.
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
 </template>
 
 <script>
-export default {
-//   computed: {
-//     totalPages: function () {
-//       return Math.ceil(this.total / this.pageSize)
-//     }
-//   },
+import translateOption from './translate/options'
+import { mapState } from 'vuex'
 
+export default {
+  components: {
+    "translate-options": translateOption 
+  },
+  
   data () {
     return {
-    //   forecasts: null,
-    //   total: 0,
-    //   pageSize: 5,
-    //   currentPage: 1
+
     }
+  },
+
+  computed: {
+    ...mapState({
+      currentKey: state => state.cognitiveServicesKey,
+      translateType: state => {
+        return state.translateType == 'plain' ? 'Text' : 'Html'
+      },
+    })
   },
 
   methods: {
-    async loadPage (page) {
-    //   this.currentPage = page
-
-    //   try {
-    //     var from = (page - 1) * (this.pageSize)
-    //     var to = from + this.pageSize
-    //     let response = await this.$http.get(`/api/translate/forecasts?from=${from}&to=${to}`)
-    //     console.log(response.data.forecasts)
-    //     this.forecasts = response.data.forecasts
-    //     this.total = response.data.total
-    //   } catch (err) {
-    //     window.alert(err)
-    //     console.log(err)
-    //   }
+    translate: function () {
+      console.log(this.$refs.options.getData());
     }
-  },
-
-  async created () {
-    // this.loadPage(1)
   }
 }
 </script>

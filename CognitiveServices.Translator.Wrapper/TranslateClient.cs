@@ -21,7 +21,7 @@ namespace CognitiveServices.Translator
         private const int MaxNumberOfCharacterPerRequest = 5_000;
         private const string UriExtensionPath = "translate";
 
-        private readonly CognitiveServiceConfig _cognitiveServiceConfig = new CognitiveServiceConfig();
+        private readonly CognitiveServicesConfig _cognitiveServiceConfig = new CognitiveServicesConfig();
         private readonly HttpClient _httpClient;
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace CognitiveServices.Translator
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="cognitiveServiceConfig">The cognitive service configuration.</param>
-        public TranslateClient(CognitiveServiceConfig cognitiveServiceConfig)
+        public TranslateClient(CognitiveServicesConfig cognitiveServiceConfig)
         {
             _cognitiveServiceConfig = cognitiveServiceConfig;
 
@@ -93,18 +93,20 @@ namespace CognitiveServices.Translator
                 // Todo We should be alternating between the subscription key. When we detect it's not working.
                 request.Headers.Add(Constants.RequestHeaderSubscriptionKey, _cognitiveServiceConfig.SubscriptionKey);
 
-                var response = await _httpClient.SendAsync(request); // .ConfigureAwait(false) [Maybe... if we want a non blocking]
-                if (response.IsSuccessStatusCode)
+                using (var response = await _httpClient.SendAsync(request).ConfigureAwait(false))
                 {
-                    var responseBody = await response.Content.ReadAsStringAsync();
-                    var result = JsonConvert.DeserializeObject<List<ResponseBody>>(responseBody);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseBody = await response.Content.ReadAsStringAsync();
+                        var result = JsonConvert.DeserializeObject<List<ResponseBody>>(responseBody);
 
-                    return result;
-                }
-                else
-                {
-                    // Problem happened.
-                    throw new Exception($"Problem happened during translation. Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}");
+                        return result;
+                    }
+                    else
+                    {
+                        // Problem happened.
+                        throw new Exception($"Problem happened during translation. Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}");
+                    }
                 }
             }
         }

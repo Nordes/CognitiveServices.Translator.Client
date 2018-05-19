@@ -4,14 +4,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace CognitiveServices.Translator.Extension
 {
-    public static class CognitiveServiceExtension
+    public static class CognitiveServicesExtension
     {
-        public static IServiceCollection AddCognitiveService(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCognitivesService(this IServiceCollection services, IConfiguration configuration)
         {
-            var cognitiveServiceConfig = new CognitiveServiceConfig();
-            configuration.GetSection(CognitiveServiceConfig.SectionName).Bind(cognitiveServiceConfig);
+            var cognitiveServiceConfig = new CognitiveServicesConfig();
+            configuration.GetSection(CognitiveServicesConfig.SectionName).Bind(cognitiveServiceConfig);
             if (cognitiveServiceConfig == null)
-                throw new System.Exception($"The configuration must have the {CognitiveServiceConfig.SectionName} " +
+                throw new System.Exception($"The configuration must have the {CognitiveServicesConfig.SectionName} " +
                     $"section. Please read the doc.");
 
             services.AddSingleton(cognitiveServiceConfig);

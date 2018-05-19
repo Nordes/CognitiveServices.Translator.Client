@@ -3,7 +3,7 @@
     <form>
       <div class="form-group row">
         <div class="col-sm-12">
-          <input type="apiKey" class="form-control" id="apiKey" placeholder="Azure Cognitive Api Key">
+          <input type="text" class="form-control" v-model="apiKey" placeholder="Cognitives Svc Api Key">
         </div>
       </div>
     </form>
@@ -11,5 +11,22 @@
 </template>
 
 <script>
-  // Todo Use VueX to store the apikey and propagate that way to other components.
+import { mapActions } from 'vuex'
+
+export default {
+  data() {
+    return {
+      apiKey: ''
+    }
+  },
+  watch: {
+    apiKey: function (val) {
+      this.setCognitiveSvcKey({cognitiveServicesKey: this.apiKey})
+    }
+  }, 
+
+  methods: {
+    ...mapActions(['setCognitiveSvcKey']),
+  }
+}
 </script>
