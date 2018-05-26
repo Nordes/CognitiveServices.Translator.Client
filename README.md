@@ -3,7 +3,8 @@ Microsoft Cognitive Services wrapper. This code/package tries to cover the versi
 
 ## Cover the following implementations
 - [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
-    - Likely completed. Further tests are required for some options.
+    - **100%** implemented.
+    - Automated integration tests should be added in order to detect changes in the API.
 - [Transliterate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-transliterate?tabs=curl)
     - **Not yet available**
 - [Detect API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect?tabs=curl)
