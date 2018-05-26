@@ -10,7 +10,9 @@ namespace CognitiveServices.Translator.Wrapper.UnitTests
         public void Temporary_TranslateResultMappingTest()
         {
             var fromText = "aさん.\r";
-            var json = "[{\"translations\":[{\"text\":\"Mr.A.\\r\",\"to\":\"en\",\"alignment\":{\"proj\":\"0:0 - 4:4 1:2 - 0:1\"}}]}]";
+            var json = "[{\"translations\":[{\"text\":\"Mr.A.\\r\",\"to\":\"en\",\"alignment\":" +
+                "{\"proj\":\"0:0 - 4:4 1:2 - 0:1\"}" +
+                "}]}]";
 
             var resp = Newtonsoft.Json.JsonConvert.DeserializeObject<List<ResponseBody>>(json);
             Assert.NotNull(resp);

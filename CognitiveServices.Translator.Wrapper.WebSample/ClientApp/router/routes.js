@@ -1,4 +1,4 @@
-import Translate from 'components/translate-page'
+import Translate from 'components/translate/translate-page'
 import HomePage from 'components/home-page'
 
 export const routes = [
