@@ -1,19 +1,22 @@
 # CognitiveServices.Translator.Client
 Microsoft Cognitive Services client. This code/package tries to cover the version 3 (V3) of the `Translator Text API reference`. Basically, we can have 2,000,000 character translated per month using that API. Also, it provides some feature that other API are not (like what was translated by what within the translate service).
 
+# Target
+This library targets the NetStandard 2.0, so you can use it within .Net Core 2.0.
+
 ## Cover the following implementations
-- [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
+- [x] [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
     - **100%** implemented.
     - Automated integration tests should be added in order to detect changes in the API.
-- [Transliterate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-transliterate?tabs=curl)
+- [ ] [Transliterate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-transliterate?tabs=curl)
     - **Not yet available**
-- [Detect API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect?tabs=curl)
+- [ ] [Detect API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect?tabs=curl)
     - **Not yet available**
-- [Break sentence API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-break-sentence?tabs=curl)
+- [ ] [Break sentence API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-break-sentence?tabs=curl)
     - **Not yet available**
-- [Dictionary Lookup API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup?tabs=curl)
+- [ ] [Dictionary Lookup API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-dictionary-lookup?tabs=curl)
     - **Not yet available**
-- [Dictionary Example API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-dictionary-examples?tabs=curl)
+- [ ] [Dictionary Example API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-dictionary-examples?tabs=curl)
     - **Not yet available**
 ## How to install
 Simply install using the Nuget package manager on your project and search for the `CognitiveServices.Translator.Client` package.
