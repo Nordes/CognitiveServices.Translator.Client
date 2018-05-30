@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CognitiveServices.Translator;
 using CognitiveServices.Translator.Translate;
-using CognitiveServices.Translator.Wrapper.WebSample.Models;
+using CognitiveServices.Translator.Client.WebSample.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Vue2Spa.Controllers

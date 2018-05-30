@@ -2,7 +2,7 @@
 using CognitiveServices.Translator.Translate;
 using Xunit;
 
-namespace CognitiveServices.Translator.Wrapper.UnitTests
+namespace CognitiveServices.Translator.Client.UnitTests
 {
     public class TranslateClientTests
     {

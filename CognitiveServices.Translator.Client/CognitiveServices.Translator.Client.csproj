@@ -1,18 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <Authors>Nordes Menard-Lamarre</Authors>
     <Company />
-    <Description>CognitiveServices Translator Wrapper for the V3 of the API.</Description>
+    <Description>CognitiveServices Translator Client for the V3 of the API.</Description>
     <Copyright>Nordes Menard-Lamarre</Copyright>
-    <PackageLicenseUrl>https://github.com/Nordes/CognitiveServices.Translator.Wrapper/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseUrl>https://github.com/Nordes/CognitiveServices.Translator.Client/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>Cognitive-services, CognitiveServices, Azure, Translator, microsoft-translator-service, Translate, Translation</PackageTags>
-    <NeutralLanguage></NeutralLanguage>
+    <NeutralLanguage>en-US</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
-    <PackageProjectUrl>https://github.com/Nordes/CognitiveServices.Translator.Wrapper</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Nordes/CognitiveServices.Wrapper.Translator</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Nordes/CognitiveServices.Translator.Client</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Nordes/CognitiveServices.Client.Translator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <RootNamespace>CognitiveServices.Translator</RootNamespace>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>

@@ -1,5 +1,5 @@
-# CognitiveServices.Translator.Wrapper
-Microsoft Cognitive Services wrapper. This code/package tries to cover the version 3 (V3) of the `Translator Text API reference`. Basically, we can have 2,000,000 character translated per month using that API. Also, it provides some feature that other API are not (like what was translated by what within the translate service).
+# CognitiveServices.Translator.Client
+Microsoft Cognitive Services client. This code/package tries to cover the version 3 (V3) of the `Translator Text API reference`. Basically, we can have 2,000,000 character translated per month using that API. Also, it provides some feature that other API are not (like what was translated by what within the translate service).
 
 ## Cover the following implementations
 - [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
@@ -16,9 +16,9 @@ Microsoft Cognitive Services wrapper. This code/package tries to cover the versi
 - [Dictionary Example API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-dictionary-examples?tabs=curl)
     - **Not yet available**
 ## How to install
-Simply install using the Nuget package manager on your project and search for the `CognitiveServices.Translator.Wrapper` package.
+Simply install using the Nuget package manager on your project and search for the `CognitiveServices.Translator.Client` package.
 
-Or, you may simply use the command line and do `Install-Package CognitiveServices.Translator.Wrapper -Version 1.0.0`.
+Or, you may simply use the command line and do `Install-Package CognitiveServices.Translator.Client -Version 1.0.0`.
 
 ## How to use
 A few choices exists, I will be presenting the most common scenario with the DI (Dependency Injection).

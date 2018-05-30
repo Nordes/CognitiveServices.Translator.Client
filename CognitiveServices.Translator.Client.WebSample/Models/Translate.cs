@@ -3,7 +3,7 @@ using CognitiveServices.Translator.Translate;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace CognitiveServices.Translator.Wrapper.WebSample.Models
+namespace CognitiveServices.Translator.Client.WebSample.Models
 {
     public class Translate
     {

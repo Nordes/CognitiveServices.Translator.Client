@@ -1,9 +1,9 @@
 <template>
     <div>
         <h1>Cognitive Services Translator Wrapper Demo!</h1>
-        <p>More details can be found on the Github page of the project at: <a href="https://github.com/Nordes/CognitiveServices.Translator.Wrapper">https://github.com/Nordes/CognitiveServices.Translator.Wrapper</a></p>
+        <p>More details can be found on the Github page of the project at: <a href="https://github.com/Nordes/CognitiveServices.Translator.Client">https://github.com/Nordes/CognitiveServices.Translator.Client</a></p>
         <p>
-          This is the demo using the nuget package "CognitiveServices.Translator.Wrapper" available on Nuget.
+          This is the demo using the nuget package "CognitiveServices.Translator.Client" available on Nuget.
         </p>
         
         <div class="row w-75">
@@ -11,7 +11,7 @@
             <img height="60px" :src="require('../assets/img/nuget.png')"/>
           </div>
           <div class="col-md-10 nblue pt-3">
-            PM&gt; Install-Package CognitiveServices.Translator.Wrapper -Version 1.0.0
+            PM&gt; Install-Package CognitiveServices.Translator.Client -Version 1.0.0
           </div>
         </div>
         <br><br>
