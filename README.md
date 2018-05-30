@@ -29,7 +29,7 @@ A few choices exists, I will be presenting the most common scenario with the DI 
 ## appsettings.json
 In the settings, add the following: 
 ```json
-"CognitiveService": {
+"CognitiveServices": {
   "Name": "Doc_Transl_demo",
   "SubscriptionKey": "[Insert Key here]",
   "SubscriptionKeyAlternate": "Second key here"
@@ -39,7 +39,7 @@ In the settings, add the following:
 ### Startup.cs
 ```csharp
 // During the service registration
-services.AddCognitiveService(configuration); // where configuration is IConfiguration
+services.AddCognitiveServices(configuration); // where configuration is IConfiguration
 services.AddScoped<ITranslate, SampleClassWithInjection>(); // Where ITranslate is your own interface, not something required.
 ```
 

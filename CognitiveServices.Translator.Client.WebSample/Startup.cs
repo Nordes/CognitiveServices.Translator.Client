@@ -31,7 +31,7 @@ namespace Vue2Spa
             services.AddMvc();
 
             // Add the cognitive service (in case you want to use DI using the appsettings.json)
-            services.AddCognitivesService(Configuration);
+            services.AddCognitiveServicesTranslator(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
