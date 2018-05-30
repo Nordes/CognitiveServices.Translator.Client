@@ -12,9 +12,9 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.0</Version>
     <PackageProjectUrl>https://github.com/Nordes/CognitiveServices.Translator.Client</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Nordes/CognitiveServices.Client.Translator</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Nordes/CognitiveServices.Translator.Client</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <RootNamespace>CognitiveServices.Translator</RootNamespace>
+    <RootNamespace>CognitiveServices.Translator.Client</RootNamespace>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
   </PropertyGroup>
