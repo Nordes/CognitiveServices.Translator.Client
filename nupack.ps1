@@ -1,15 +1,8 @@
-############### Remove RavenDB Abandonned Indexes #########################
+############### Create and push a nuget package   #########################
 #--------------------------------------------------------------------------
-# Example of call: 
-#   > .\RavenDB-RemoveAbandonnedIndexes.ps1 -testRun -server "http://localhost:8080"
-# Result: 
-#   Start the process in test run to show what will be deleted from the specified RavenDB URL
-# Tested on:
-#   RavenDB 2.5
 ###########################################################################
 [CmdletBinding()]
 Param(
-  # Path to azure publish settings. It can be downloaded easilly from Azure portal
   [Parameter(Mandatory=$false)]
   [string]$k = "somekindofkey",
 
