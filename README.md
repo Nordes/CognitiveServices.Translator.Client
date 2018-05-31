@@ -9,7 +9,8 @@ This library/Nuget package targets the NetStandard 2.0, so you can use it within
 ## Cover the following implementations
 - [x] [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
     - **100%** implemented.
-    - Automated integration tests should be added in order to detect changes in the API.
+    - Demo available at [cstranslatordemo.azurewebsites.net](https://cstranslatordemo.azurewebsites.net/)
+    - _Todo: Automated integration tests would be a nice to have in order to detect API changes._
 - [ ] [Transliterate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-transliterate?tabs=curl)
     - **Not yet available**
 - [ ] [Detect API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-detect?tabs=curl)
