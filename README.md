@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/78xcqsw08we1y62j?svg=true)](https://ci.appveyor.com/project/Nordes/cognitiveservices-translator-client)
+
 # CognitiveServices.Translator.Client
 Microsoft Cognitive Services client. This code/package tries to cover the version 3 (V3) of the `Translator Text API reference`. Basically, we can have 2,000,000 character translated per month using that API. Also, it provides some feature that other API are not (like what was translated by what within the translate service).
 
