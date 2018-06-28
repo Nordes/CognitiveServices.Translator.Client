@@ -1,4 +1,5 @@
 using System;
+using Microsoft.Extensions;
 using CognitiveServices.Translator.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +30,7 @@ namespace Vue2Spa
         {
             // Add framework services.
             services.AddMvc();
-
+            services.AddLogging();
             // Add the cognitive service (in case you want to use DI using the appsettings.json)
             services.AddCognitiveServicesTranslator(Configuration);
         }

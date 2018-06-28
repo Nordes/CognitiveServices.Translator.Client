@@ -7,26 +7,43 @@ using CognitiveServices.Translator;
 using CognitiveServices.Translator.Translate;
 using CognitiveServices.Translator.Client.WebSample.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
 
 namespace Vue2Spa.Controllers
 {
     [Route("api/[controller]")]
     public class TranslateController : Controller
     {
-        public TranslateController()
+        private readonly ILogger<TranslateController> _logger;
+        private readonly ITranslateClient _translateClient;
+
+        public TranslateController(ILogger<TranslateController> logger, ITranslateClient translateClient)
         {
-            // In case of injection... we could then use a scoped OR a different way of using pre-configured
-            // translator configuration.
+            _logger = logger;
+            _translateClient = translateClient;
         }
 
-        //[HttpPut("[action]")]
-        //public async Task<IList<ResponseBody>> Translate([Required] Translate translate)
-        [HttpPut()]
-        public async Task<IList<ResponseBody>> Index([FromBody] Translate translate)
+        [HttpPut("withDI")]
+        public async Task<IList<ResponseBody>> WithDependencyInjection([FromBody] TranslateRequest translate)
         {
-            var translateClient = new TranslateClient(translate.CognitiveServicesConfig);
+            return await _translateClient.TranslateAsync(translate.RequestContents, translate.Options);
+        }
 
-            return await translateClient.TranslateAsync(translate.RequestContents, translate.Options);
+        [HttpPut()]
+        public async Task<IList<ResponseBody>> Index([FromBody] TranslateRequest translate)
+        {
+            try
+            {
+                // Create a call with the configuration from a client.
+                var translateClient = new TranslateClient(translate.CognitiveServicesConfig);
+                return await translateClient.TranslateAsync(translate.RequestContents, translate.Options);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(default(EventId), e, "Error!!!!");
+                throw e;
+            }
         }
     }
 }

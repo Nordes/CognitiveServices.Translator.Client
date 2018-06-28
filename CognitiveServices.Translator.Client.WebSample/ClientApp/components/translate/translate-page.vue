@@ -11,7 +11,7 @@
             </div>
             <div class="card-body text-dark">
               <h5><span id="inputType">{{translateType}}</span> to translate</h5>
-              <textarea class="w-100"/>
+              <textarea v-model="textInput" class="w-100"/>
               
               <button class="btn btn-primary float-md-right" @click="translate">Translate</button>
               <br><br><br>
@@ -49,7 +49,8 @@ export default {
   
   data () {
     return {
-      translatedText: "result will be displayed here."
+      translatedText: "result will be displayed here.",
+      textInput: 'How are you?'
     }
   },
 
@@ -65,6 +66,25 @@ export default {
   methods: {
     translate: function () {
       console.log(this.$refs.options.getData());
+      var context = this;
+
+      var translateRequest = {
+        cognitiveServicesConfig: { subscriptionKey: this.currentKey },
+        requestContents: [
+          { text: this.textInput }
+        ],
+        options: this.$refs.options.getData()
+      };
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("PUT", "/api/translate", true);
+      xhttp.setRequestHeader('content-type', 'application/json; charset=utf-8');
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          context.translatedText = JSON.stringify(JSON.parse(this.responseText), null, 4);
+        }
+      };
+
+      xhttp.send(JSON.stringify(translateRequest));
     },
     copyClipboard: function () {
       const textArea = document.createElement('textarea');

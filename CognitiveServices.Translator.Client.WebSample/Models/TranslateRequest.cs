@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CognitiveServices.Translator.Client.WebSample.Models
 {
-    public class Translate
+    public class TranslateRequest
     {
         [Required]
         public CognitiveServicesConfig CognitiveServicesConfig { get; set; }
