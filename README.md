@@ -7,6 +7,11 @@ Microsoft Cognitive Services client. This code/package tries to cover the versio
 This library/Nuget package targets the NetStandard 2.0, so you can use it within .Net Core 2.0.
 
 ## Cover the following implementations
+- [X] [Language API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-languages?tabs=curl)
+    - **100%** implemented.
+    - **Does not require a Cognitive Services API Key**
+    - Require some tests.
+    - Cache is not implemented perfectly (not yet using the ETag nor invalidating before a next restart).
 - [x] [Translate API](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-translate?tabs=curl)
     - **100%** implemented.
     - Demo available at [cstranslatordemo.azurewebsites.net](https://cstranslatordemo.azurewebsites.net/)
