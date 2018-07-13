@@ -13,6 +13,6 @@ namespace CognitiveServices.Translator.Client.Language
 
         public TextDirection Dir { get; set; }
 
-        public IList<Translation> Translations { get; set; }
+        public List<Translation> Translations { get; set; }
     }
 }

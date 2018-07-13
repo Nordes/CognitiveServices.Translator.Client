@@ -18,7 +18,6 @@ namespace CognitiveServices.Translator.Client
     public class LanguageClient : ILanguageClient
     {
         private const string UriExtensionPath = "languages";
-        private readonly CognitiveServicesConfig _cognitiveServiceConfig;
         private readonly HttpClient _httpClient;
         private string _headerETag = null;
         private ResponseBody _cachedFullScopes;
@@ -28,10 +27,8 @@ namespace CognitiveServices.Translator.Client
         /// </summary>
         /// <param name="logger">The logger.</param>
         /// <param name="cognitiveServiceConfig">The cognitive service configuration.</param>
-        public LanguageClient(CognitiveServicesConfig cognitiveServiceConfig)
+        public LanguageClient()
         {
-            _cognitiveServiceConfig = cognitiveServiceConfig;
-
             // In Core 2.1, we can use what is described in: https://docs.microsoft.com/en-gb/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1
             // Otherwise, maybe use RestSharp?
             _httpClient = new HttpClient
@@ -61,14 +58,16 @@ namespace CognitiveServices.Translator.Client
         /// <returns></returns>
         public async Task<ResponseBody> GetAsync(RequestHeader settings, Scope scopes)
         {
+            if (settings == null) throw new ArgumentNullException(nameof(settings));
+
             var scopeFlags = string.Join(",", scopes.GetFlags());
-            var qs = $"api-version={Constants.ApiVersion}&scope={scopeFlags}";
+            var qs = $"api-version={Constants.ApiVersion}&scope={scopeFlags.Replace(",All", "")}";
 
             // Not the best, but for now it will do.
             if (_cachedFullScopes != null)
                 return _cachedFullScopes; // TODO use a memory cache, or other cache.
 
-            using (var request = new HttpRequestMessage(HttpMethod.Post, $"{UriExtensionPath}?{qs}"))
+            using (var request = new HttpRequestMessage(HttpMethod.Get, $"{UriExtensionPath}?{qs}"))
             {
                 request.Headers.AcceptLanguage.TryParseAdd(settings.AcceptLanguage.Name);
                 if (settings.ClientTraceId.HasValue)

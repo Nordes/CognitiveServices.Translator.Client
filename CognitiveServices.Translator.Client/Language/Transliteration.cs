@@ -17,6 +17,6 @@ namespace CognitiveServices.Translator.Client.Language
         /// <summary>
         /// List of scripts to convert from. Each element of the scripts list has properties.
         /// </summary>
-        public IList<Script> Scripts { get; set; }
+        public List<Script> Scripts { get; set; }
     }
 }

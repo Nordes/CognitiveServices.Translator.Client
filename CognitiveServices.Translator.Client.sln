@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{62F4FC47
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CognitiveServices.Translator.Client.WebSample", "CognitiveServices.Translator.Client.WebSample\CognitiveServices.Translator.Client.WebSample.csproj", "{0C7301A5-0CA3-464D-9154-541FF07B679C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CognitiveServices.Translator.Client.IntegrationTests", "CognitiveServices.Translator.Client.IntegrationTests\CognitiveServices.Translator.Client.IntegrationTests.csproj", "{DAE1F574-D8A0-452E-9897-E8BBB69F7A94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,12 +31,17 @@ Global
 		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C7301A5-0CA3-464D-9154-541FF07B679C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE1F574-D8A0-452E-9897-E8BBB69F7A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE1F574-D8A0-452E-9897-E8BBB69F7A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE1F574-D8A0-452E-9897-E8BBB69F7A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE1F574-D8A0-452E-9897-E8BBB69F7A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2CB2CF9A-37AF-42C0-B295-2D89A7B0B4A0} = {62F4FC47-337A-4C34-9971-F77E659EC721}
+		{DAE1F574-D8A0-452E-9897-E8BBB69F7A94} = {62F4FC47-337A-4C34-9971-F77E659EC721}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF7AB9F6-3F8F-4488-AB8C-08388F922E91}
