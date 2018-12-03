@@ -1,6 +1,5 @@
 ﻿using CognitiveServices.Translator.Client.Extension;
 using CognitiveServices.Translator.Client.Language;
-using CognitiveServices.Translator.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -90,6 +89,7 @@ namespace CognitiveServices.Translator.Client
                     }
                     else
                     {
+                        // Code changed see : https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-languages?tabs=curl
                         /*
                          * 304	The resource has not been modified since the version specified by request headers If-None-Match.
                          * 400	One of the query parameters is missing or not valid. Correct request parameters before retrying.
