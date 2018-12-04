@@ -1,0 +1,82 @@
+$theme-dark-color: #222;
+@import "../../node_modules/picnic/src/themes/default/theme";
+
+article {
+  header {
+    background-color: $theme-dark-color;
+    color: $white;
+  }
+
+  content {
+    padding: 0 1em;
+  }
+
+  footer {
+    background-color: $silver;
+    padding: 0 1em !important;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+
+// Optimization can be done by using a list + substring + ...
+// http://sass-lang.com/documentation/Sass/Script/Functions.html
+@for $size from 0 to 4 {
+  .p-#{$size}, .pt-#{$size}, .py-#{$size} {
+    padding-top: #{$size}em;
+  }
+  .p-#{$size}, .pb-#{$size}, .py-#{$size} {
+    padding-bottom: #{$size}em;
+  }
+
+  .p-#{$size}, .pl-#{$size}, .px-#{$size} {
+    padding-left: #{$size}em;
+  }
+  .p-#{$size}, .pr-#{$size}, .px-#{$size} {
+    padding-right: #{$size}em;
+  }
+
+  .ml-#{$size}, .mx-#{$size} {
+    margin-left: #{$size}em;
+  }
+  .mr-#{$size}, .mx-#{$size} {
+    margin-right: #{$size}em;
+  }
+
+  .mt-#{$size}, .my-#{$size} {
+    margin-left: #{$size}em;
+  }
+  .mb-#{$size}, .my-#{$size} {
+    margin-right: #{$size}em;
+  }
+}
+
+.color-white {
+  color: $white;
+}
+.color-red {
+  color: $picnic-error;
+}
+
+.color-darkGray {
+  color: #555;
+}
+
+.bt {
+  border-top: $picnic-border;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.spinner-big {
+  font-size:79px;
+  line-height: 1;
+}
+
+.border {
+  border: 1px solid #888;
+}

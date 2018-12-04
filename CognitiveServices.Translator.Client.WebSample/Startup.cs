@@ -1,72 +1,117 @@
-using System;
-using Microsoft.Extensions;
+﻿using System.IO;
+using System.Reflection;
 using CognitiveServices.Translator.Extension;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.AspNetCore.SpaServices.Webpack;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
-namespace Vue2Spa
+namespace CognitiveServices.Translator.Client.WebSample
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-
-            Configuration = builder.Build();
+            Configuration = configuration;
         }
 
-        public IConfigurationRoot Configuration { get; }
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddMvc();
-            services.AddLogging();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddSwaggerGen(c =>
+                {
+                    c.SwaggerDoc("v1", new Info {
+                        Title = "My app API",
+                        Description = "A simple example Core Web API",
+                        TermsOfService = "None",
+                        Version = "v1",
+                        Contact = new Contact
+                            {
+                                Name = "Nordes Lamarre",
+                                Email = string.Empty,
+                                Url = "https://twitter.com/nordes"
+                            },
+                            License = new License
+                            {
+                                Name = "Use under MIT",
+                                Url = "https://github.com/Nordes/HoNoSoFt.DotNet.Web.Spa.ProjectTemplates/blob/master/LICENSE"
+                            }
+                    });
+
+                    // Set the comments path for the Swagger JSON and UI.
+                    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                    var xmlPath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), xmlFile);
+                    c.IncludeXmlComments(xmlPath);
+                });
+                
+            // Enable the Gzip compression especially for Kestrel
+            services.Configure<GzipCompressionProviderOptions>(options => options.Level = System.IO.Compression.CompressionLevel.Optimal);
+            services.AddResponseCompression(options =>
+                {
+                    options.EnableForHttps = true;
+                });
+
+            services.AddSpaStaticFiles(config => { config.RootPath = "wwwroot/"; });
+
             // Add the cognitive service (in case you want to use DI using the appsettings.json)
             services.AddCognitiveServicesTranslator(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-                // Webpack initialization with hot-reload.
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    HotModuleReplacement = true,
-                });
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
             }
 
-            app.UseStaticFiles();
+            app.UseHttpsRedirection();
+            app.UseResponseCompression(); // This is especially true for Kestrel!
+            
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
 
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
+            app.UseSpaStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller}/{action=Index}/{id?}");
+            });
 
-                routes.MapSpaFallbackRoute(
-                    name: "spa-fallback",
-                    defaults: new { controller = "Home", action = "Index" });
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "ClientApp";
+
+                if (env.IsDevelopment())
+                {
+                    spa.ApplicationBuilder.UseWebpackDevMiddleware(
+                        new WebpackDevMiddlewareOptions
+                        {
+                            HotModuleReplacement = true,
+                            ConfigFile = "./build/webpack.config.js"
+                        });
+                }
             });
         }
     }
