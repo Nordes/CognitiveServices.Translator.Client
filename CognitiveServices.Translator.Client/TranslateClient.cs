@@ -104,8 +104,13 @@ namespace CognitiveServices.Translator
                     }
                     else
                     {
-                        // Problem happened.
-                        throw new Exception($"Problem happened during translation. Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}");
+                        var message = $"Problem happened during translation. " +
+                                        $"Status code: {response.StatusCode}, " +
+                                        $"Reason: {response.ReasonPhrase}";
+
+                        var exception = new TranslateException(message);
+                        exception.ParseResponseError(response);
+                        throw exception;
                     }
                 }
             }

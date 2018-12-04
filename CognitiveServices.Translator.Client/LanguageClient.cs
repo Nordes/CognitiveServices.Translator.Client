@@ -89,15 +89,17 @@ namespace CognitiveServices.Translator.Client
                     }
                     else
                     {
-                        // Code changed see : https://docs.microsoft.com/en-us/azure/cognitive-services/translator/reference/v3-0-languages?tabs=curl
-                        /*
-                         * 304	The resource has not been modified since the version specified by request headers If-None-Match.
-                         * 400	One of the query parameters is missing or not valid. Correct request parameters before retrying.
-                         * 429	The caller is sending too many requests.
-                         * 500	An unexpected error occurred. If the error persists, report it with: date and time of the failure, request identifier from response header X-RequestId, and client identifier from request header X-ClientTraceId.
-                         * 503	Server temporarily unavailable. Retry the request. If the error persists, report it with: date and time of the failure, request identifier from response header X-RequestId, and client identifier from request header X-ClientTraceId.
-                         * */
-                        throw new Exception($"Problem happened while contacting the Language API. Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}");
+                        string errorBody = $"Problem happened while contacting the Language API. " +
+                            $"Status code: {response.StatusCode}, Reason: {response.ReasonPhrase}";
+                        {
+                            var message = $"Problem happened during translation. " +
+                                            $"Status code: {response.StatusCode}, " +
+                                            $"Reason: {response.ReasonPhrase}";
+
+                            var exception = new LanguageException(message);
+                            exception.ParseResponseError(response);
+                            throw exception;
+                        }
                     }
                 }
             }
