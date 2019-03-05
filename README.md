@@ -49,7 +49,7 @@ In the settings, add the following:
 ### Startup.cs
 ```csharp
 // During the service registration
-services.AddCognitiveServices(configuration); // where configuration is IConfiguration
+services.AddCognitiveServicesTranslator(configuration); // where configuration is IConfiguration
 services.AddScoped<ITranslate, SampleClassWithInjection>(); // Where ITranslate is your own interface, not something required.
 ```
 
