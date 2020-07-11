@@ -43,7 +43,7 @@ In the settings, add the following:
   "Name": "Doc_Transl_demo",
   "SubscriptionKey": "[Insert Key here]",
   "SubscriptionKeyAlternate": "Second key here",
-  "SubscriptionRegion": "[Optional region here]"
+  "SubscriptionRegion": "[Region here, optional]"
 }
 ```
 
