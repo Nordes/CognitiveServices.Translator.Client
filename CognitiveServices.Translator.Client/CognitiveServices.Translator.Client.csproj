@@ -6,7 +6,7 @@
     <Company />
     <Description>CognitiveServices Translator Client for the V3 of the API.</Description>
     <Copyright>Nordes Menard-Lamarre</Copyright>
-    <PackageLicenseUrl>https://github.com/Nordes/CognitiveServices.Translator.Client/blob/master/LICENSE</PackageLicenseUrl>
+    <License>https://github.com/Nordes/CognitiveServices.Translator.Client/blob/master/LICENSE</License>
     <PackageTags>Cognitive-services, CognitiveServices, Azure, Translator, microsoft-translator-service, Translate, Translation</PackageTags>
     <NeutralLanguage>en-US</NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
