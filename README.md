@@ -42,7 +42,8 @@ In the settings, add the following:
 "CognitiveServices": {
   "Name": "Doc_Transl_demo",
   "SubscriptionKey": "[Insert Key here]",
-  "SubscriptionKeyAlternate": "Second key here"
+  "SubscriptionKeyAlternate": "Second key here",
+  "SubscriptionRegion": "[Region here, optional]"
 }
 ```
 
@@ -74,7 +75,7 @@ public class SampleClassWithInjection: ITranslate {
         IncludeAlignment = true, // Return what was translated by what. (see documentation)
       });
 
-    // response = array of sentenses + array of target language
+    // response = array of sentences + array of target language
     _logger.LogDebug(response.First().Translations.First().Text);
     
     return response;
@@ -86,6 +87,7 @@ public class SampleClassWithInjection: ITranslate {
 
 ## Author(s)
 - @Nordes (me)
+- @dmitriybobrovskiy
 
 ## License
 MIT

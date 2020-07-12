@@ -92,6 +92,7 @@ namespace CognitiveServices.Translator
                 request.Content = new StringContent(requestBody, Encoding.UTF8, Constants.RequestMediaType);
                 // Todo We should be alternating between the subscription key. When we detect it's not working.
                 request.Headers.Add(Constants.RequestHeaderSubscriptionKey, _cognitiveServiceConfig.SubscriptionKey);
+                request.Headers.Add(Constants.RequestHeaderSubscriptionRegion, _cognitiveServiceConfig.SubscriptionRegion);
 
                 using (var response = await _httpClient.SendAsync(request).ConfigureAwait(false))
                 {

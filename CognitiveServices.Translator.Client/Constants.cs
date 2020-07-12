@@ -5,6 +5,7 @@
         public const string TranslatorApiBasePath = "https://api.cognitive.microsofttranslator.com/";
         public const string RequestMediaType = "application/json";
         public const string RequestHeaderSubscriptionKey = "Ocp-Apim-Subscription-Key";
+        public const string RequestHeaderSubscriptionRegion = "Ocp-Apim-Subscription-Region";
 
         /// <summary>
         /// Gets the API version.
