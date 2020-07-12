@@ -40,7 +40,7 @@ namespace CognitiveServices.Translator.Translate
         /// A string specifying the category (domain) of the translation. This parameter
         /// is used to get translations from a customized system built with Microsoft Translator Hub. Default value is: general.
         /// </summary>
-        public string Category => "general";
+        public string Category { get; set; } = "general";
 
         /// <summary>
         /// Specifies how profanities should be treated in translations. Possible values 
