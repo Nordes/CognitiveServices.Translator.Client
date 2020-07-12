@@ -1,6 +1,6 @@
 {
-  "name": "honosoft-vuejs-picnic",
-  "description": "ASP.NET Core & VueJS using Picnic CSS and set the full table (many extras)",
+  "name": "cognitiveservice-translator-client-sample",
+  "description": "CognitiveServices.Translator.Client.WebSample web client sample",
   "author": "Nordes Menard-Lamarre",
   "repository": {
     "url": "https://github.com/nordes/HoNoSoFt.DotNet.Web.Spa.ProjectTemplates"
@@ -47,7 +47,7 @@
     "picnic": "^6.5.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
-    "uglifyjs-webpack-plugin": "^2.0.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.17",

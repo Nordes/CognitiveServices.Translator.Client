@@ -49,11 +49,12 @@ module.exports = {
       }
     },
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: !BaseConfig.isProduction // set to true if you want JS source maps
-      }),
+      // NOTE: Fails in production for some reason (recent issue)
+      // new UglifyJsPlugin({
+      //   cache: true,
+      //   parallel: true,
+      //   sourceMap: !BaseConfig.isProduction // set to true if you want JS source maps
+      // }),
       new OptimizeCSSAssetsPlugin({})
     ],
     nodeEnv: BaseConfig.isProduction ? 'production' : 'development'
