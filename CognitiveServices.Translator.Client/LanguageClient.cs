@@ -18,7 +18,6 @@ namespace CognitiveServices.Translator.Client
     {
         private const string UriExtensionPath = "languages";
         private readonly HttpClient _httpClient;
-        private string _headerETag = null;
         private ResponseBody _cachedFullScopes;
 
         /// <summary>
