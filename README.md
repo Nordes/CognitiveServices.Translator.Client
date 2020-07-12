@@ -85,9 +85,12 @@ public class SampleClassWithInjection: ITranslate {
 
 **By example**: If I send `Aさん`, I wil receive `Mr.A.`. (Better example to come)
 
-## Author(s)
+## Author
 - @Nordes (me)
+
+### Contrib
 - @dmitriybobrovskiy
+- @Phrohdoh
 
 ## License
 MIT
