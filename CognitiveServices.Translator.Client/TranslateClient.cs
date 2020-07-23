@@ -17,7 +17,7 @@ namespace CognitiveServices.Translator
     /// <remarks>https://docs.microsoft.com/en-us/azure/cognitive-services/translator/quickstarts/csharp</remarks>
     public class TranslateClient : ITranslateClient
     {
-        private const int MaxNumberOfRequestContent = 25;
+        private const int MaxNumberOfRequestContent = 100;
         private const int MaxNumberOfCharacterPerRequest = 5_000;
         private const string UriExtensionPath = "translate";
 
@@ -44,7 +44,7 @@ namespace CognitiveServices.Translator
         /// <summary>
         /// Translates the content.
         /// </summary>
-        /// <param name="content">The content. (Max.: 25 items)</param>
+        /// <param name="content">The content. (Max.: 100 items)</param>
         /// <param name="options">The options.</param>
         /// <returns>
         /// The translated content
@@ -57,7 +57,7 @@ namespace CognitiveServices.Translator
         /// <summary>
         /// Translates the content.
         /// </summary>
-        /// <param name="content">The content. (Max.: 25 items)</param>
+        /// <param name="content">The content. (Max.: 100 items)</param>
         /// <param name="options">The options.</param>
         /// <returns>
         /// The translated content
@@ -70,7 +70,7 @@ namespace CognitiveServices.Translator
         /// <summary>
         /// Translates the content.
         /// </summary>
-        /// <param name="content">The content. (Max.: 25 items)</param>
+        /// <param name="content">The content. (Max.: 100 items)</param>
         /// <param name="options">The options.</param>
         /// <returns>
         /// The translated content
@@ -120,7 +120,7 @@ namespace CognitiveServices.Translator
         /// <summary>
         /// Translates the content.
         /// </summary>
-        /// <param name="content">The content. (Max.: 25 items)</param>
+        /// <param name="content">The content. (Max.: 100 items)</param>
         /// <param name="options">The options.</param>
         /// <returns>
         /// The translated content
